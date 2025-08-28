@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Gym Tracker">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1a202c">
+    <title>Gym Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gym Tracker</h1>
+            <nav>
+                <button class="tab-btn active" data-tab="routine">Rutina</button>
+                <button class="tab-btn" data-tab="timer">Cronómetro</button>
+                <button class="tab-btn" data-tab="consistency">Consistencia</button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="tab-content active" id="routine">
+                <div class="day-selector">
+                    <button class="day-btn active" data-day="1">Día 1 - Piernas (Glúteo/Femoral)</button>
+                    <button class="day-btn" data-day="2">Día 2 - Tren Superior (Push)</button>
+                    <button class="day-btn" data-day="3">Día 3 - Piernas (Cuádriceps/Gemelos)</button>
+                    <button class="day-btn" data-day="4">Día 4 - Tren Superior (Pull)</button>
+                    <button class="day-btn" data-day="5">Día 5 - Piernas (Mixto/Potencia)</button>
+                </div>
+
+                <div class="exercises-container" id="exercises">
+                    <!-- Exercises will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="timer">
+                <div class="timer-container">
+                    <div class="timer-display">
+                        <span id="timer-minutes">01</span>:<span id="timer-seconds">30</span>
+                    </div>
+                    <div class="timer-controls">
+                        <button id="start-timer">Iniciar</button>
+                        <button id="pause-timer">Pausar</button>
+                        <button id="reset-timer">Reset</button>
+                    </div>
+                    <div class="timer-presets">
+                        <button class="preset-btn" data-time="60">1min</button>
+                        <button class="preset-btn active" data-time="90">1:30</button>
+                        <button class="preset-btn" data-time="120">2min</button>
+                        <button class="preset-btn" data-time="180">3min</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="consistency">
+                <div class="consistency-container">
+                    <h2>Registro de Consistencia</h2>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <h3>Esta Semana</h3>
+                            <div class="stat-value" id="week-workouts">0/5</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Este Mes</h3>
+                            <div class="stat-value" id="month-workouts">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Racha Actual</h3>
+                            <div class="stat-value" id="current-streak">0 días</div>
+                        </div>
+                    </div>
+                    <div class="calendar-container">
+                        <div class="calendar" id="calendar">
+                            <!-- Calendar will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <button id="mark-workout">Marcar Entrenamiento de Hoy</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
